@@ -1,28 +1,29 @@
 import Image from "next/image";
-import Nav from "../components/nav";
-import Navbar from "../components/nav";
 
+import Navbar from "../components/nav";
+import BackgroundVideo from "@/components/bg";
 
 
 export default function Home() {
   return (
    <div> 
-      <div className="fixed top-0 left-0 w-full h-full z-[-1] overflow-x-hidden">
-      <video
-        className="min-w-full min-h-full object-cover"
-        src="/5091624-hd_1920_1080_24fps.mp4"
-        autoPlay
-        loop
-        muted
-      />
-    </div>
+<BackgroundVideo/>
 
     <Navbar/>
 
-    < div className=" bg-white fixed top-96 p-96 z-0">
-    asdjnsakjdn
-    
-    </div>
+    <div className="flex flex-col  relative z-20 items-center  bg-white justify-center h-[500px] text-center p-8">
+        <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold">
+          Amit Kumar Sharma
+        </h1>
+        <h2 className="text-2xl md:text-4xl lg:text-6xl font-bold mt-2">
+          GRC Consultant
+        </h2>
+        <p className="text-lg mt-2">
+          <i>Add a subheading</i>
+        </p>
+      </div>
+
+   
       
 
 
