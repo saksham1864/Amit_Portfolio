@@ -4,8 +4,8 @@ import Image from "next/image";
 export default function About() {
         
      
- return <div>
-        <div  className="flex relative z-20  text-white p-4">
+ return <div className=" mt-4 "> 
+        <div  className="flex relative text-white ">
 <Image
       src="/jj.png"
       alt="Example"
@@ -13,13 +13,13 @@ export default function About() {
       height={20}
       className="  md:ml-[2rem] lg:ml-[10rem] lg:w-[10rem]"
     />
-    <h1 className="text-2xl    md:ml-[2rem]  md:text-3xl lg:text-4xl font-bold">
+    <h1 className="text-xl    md:ml-[2rem]  md:text-2xl lg:text-4xl font-bold">
       About Me
     </h1>
   </div>
 
-<div id="about" className="block text-white relative z-20 h-[500px]  p-20">
-    <h1 className="text-lg md:text-4xl  md:ml-[3rem] lg:ml-[15rem] lg:text-6xl font-bold">
+<div id="about" className="block mt-4 text-white relative   ">
+    <h1 className="text-lg md:text-3xl  md:ml-[3rem] lg:ml-[15rem] lg:text-4xl font-bold">
       Hi,There
     </h1>
     <p className="text-2xl  mt-10       md:ml-[3rem] lg:ml-[15rem]">Seasoned IT security professional with over 17 years 

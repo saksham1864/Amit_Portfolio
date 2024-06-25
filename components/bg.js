@@ -18,7 +18,7 @@ const BackgroundVideo = () => {
   }, [disciplines.length]);
 
   return (
-    <div className="relative w-full h-[755px] overflow-hidden"> {/* Adjust height as needed */}
+    <div className="relative w-full h-[950px] lg:h-[785px] overflow-hidden"> {/* Adjust height as needed */}
       <video
         autoPlay
         muted
