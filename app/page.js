@@ -6,7 +6,7 @@ import About from "@/components/about";
 
 export default function Home() {
   return (
-   <div> 
+   <div className=" scroll-smooth "> 
 <BackgroundVideo/>
 
     <Navbar/>
