@@ -1,8 +1,24 @@
-import React from 'react';
+'use client'
+import React, { useState, useEffect } from 'react';
 
 const BackgroundVideo = () => {
+  const [disciplines, setDisciplines] = useState([]);
+  const [currentDisciplineIndex, setCurrentDisciplineIndex] = useState(0);
+
+  useEffect(() => {
+    fetch('/config.json')
+      .then(response => response.json())
+      .then(data => setDisciplines(data.disciplines));
+
+    const interval = setInterval(() => {
+      setCurrentDisciplineIndex(prevIndex => (prevIndex + 1) % disciplines.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [disciplines.length]);
+
   return (
-    <div className="relative w-full h-[750px]  overflow-hidden"> {/* Adjust height as needed */}
+    <div className="relative w-full h-[755px] overflow-hidden"> {/* Adjust height as needed */}
       <video
         autoPlay
         muted
@@ -12,36 +28,37 @@ const BackgroundVideo = () => {
         <source src="/5091624-hd_1920_1080_24fps.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      
 
-
-      <div className="flex flex-col  relative top-[5rem] items-center bg-white  text-white justify-center h-[500px] text-center p-8">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl  text-gray-400 font-bold">
+      <div className="block relative top-[15rem] md:ml-20 ml-20 lg:ml-40 text-white font-semibold justify-center   p-4">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl  text-[#D9D9D9] font-bold">
           Amit Kumar Sharma
         </h1>
+     
         <h2 className="text-2xl md:text-4xl lg:text-6xl font-bold mt-2">
           GRC Consultant
         </h2>
-        <p className="text-lg mt-2">
-          <i>Add a subheading</i>
-        </p>
+        {disciplines.length > 0 && (
+          <p className="text-2xl md:text-4xl lg:text-6xl font-bold">
+          <sub> <b className='lg:text-9xl md:text-6xl text-5xl'>+</b></sub> <i>{disciplines[currentDisciplineIndex]}</i>
+          </p>
+        )}
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+      
     </div>
   );
 };
 
 export default BackgroundVideo;
+
+
+
+
+
+
+
+
+
+
+
+
 
