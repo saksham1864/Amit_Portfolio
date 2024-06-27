@@ -6,7 +6,7 @@ import About from "@/components/about";
 
 export default function Home() {
   return (
-   <div className=" scroll-smooth "> 
+   <main className=" "> 
 <BackgroundVideo/>
 
     <Navbar/>
@@ -17,6 +17,6 @@ export default function Home() {
 
 
 
-   </div>
+   </main>
   );
 }
